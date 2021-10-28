@@ -14,6 +14,8 @@ My main inspiration to develop this small web application was to strenghten my v
 ## Usage 
 The website is hosted on Github Pages at the following URL:
 
+https://carlosp1806.github.io/project-tracker-app/
+
 The user first needs to create a new category to start storing their projects (eg. school, work, etc). Then, a button will appear, so that the user can fill in a form to create a new project. The web app allows the user to mark projects as completed and also to clear the currently completed projects. The status of the projects is always automatically updated.
 
 The following is a sample image of the project's functionality:
