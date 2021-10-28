@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+/* ===== General Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+}
+
+html {
+    min-height: 100vh;
+    background-color: rgb(238, 238, 238);
+}
+
+h1, h2, h3, h4 {
+    font-size: 3.2rem;
+}
+p, a {
+    font-size: 1.8rem;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+
+
+/* ===== Header ===== */
+header {
+    background-color: #242b69;
+    padding: 2rem 3rem;
+}
+
+header h1 {
+    color: whitesmoke;
+}
+
+/* ===== Layout ===== */
+main {
+    display: flex;
+    padding: 9rem;
+}
+
+.card {
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 3rem;
+    padding: 2rem;
+}
+
+/* ===== Left content ===== */
+.content-left {
+    flex-basis: 30%;
+    margin-right: 2rem;
+}
+
+.card .card-title {
+    color: #242b69;
+    margin-bottom: 1rem;
+}
+
+/* --- Category --- */
+.category {
+    margin: 1rem 0;
+}
+
+.categories-card .delete-category {
+    font-style: italic;
+    font-weight: 200;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+.category .category-text {
+    font-size: 2rem;
+    cursor: pointer;
+}
+.category .category-text:hover {
+    color: #242b69;
+}
+.category.selected .category-text {
+    display: inline-block;
+    background-color: rgb(238, 238, 238);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    color: #242b69;
+}
+
+.category-form {
+    margin-top: 2rem;
+}
+
+.category-form i {
+    color: #242b69;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.category-form .category-input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #242b69;
+    font-size: 1.8rem;
+}
+.category-form .category-input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* --- Status --- */
+.status-card .clear-completed {
+    cursor: pointer;
+    font-weight: 200;
+    font-style: italic;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.status li {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.status .custom-bullet {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+#progress .custom-bullet {
+    background-color: #242b69;
+}
+#completed .custom-bullet {
+    background-color: green;
+}
+#important .custom-bullet {
+    background-color: crimson;
+}
+
+.status li .count {
+    flex: 1;
+    text-align: right;
+    color: #242b69;
+    font-weight: bold;
+}
+
+/* ===== Right Content ===== */
+.content-right {
+    flex-basis: 68%;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #242b69;
+    border-radius: 5px;
+    padding: 1rem;
+}
+.project-header h2 {
+    color: white;
+}
+.project-header i {
+    color: #242b69;
+    font-size: 2.5rem;
+    padding: 0.5rem;
+    background: white;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.project-card {
+    background-color: white;
+    margin: 3rem 0;
+    border-radius: 5px;
+    padding: 2rem 3rem;
+    position: relative;
+}
+
+.project-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.project-card .project-toggle {
+    font-style: italic;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.project-card::before {
+    content: '';
+    height: 100%;
+    width: 10px;
+    background-color: #242b69;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 5px 0 0 5px;
+}
+.project-card.important::before {
+    background-color: crimson;
+}
+.project-card.completed::before {
+    background-color: green;
+}
+
+.project-title {
+    color: #242b69;
+    font-size: 2.4rem;
+}
+
+.project-card.completed .project-title {
+    color: inherit;
+    font-weight: 200;
+    text-decoration: line-through;
+}
+
+.description {
+    font-size: 1.5rem;
+    font-weight: 200;
+    margin-bottom: 1rem;
+}
+
+.project-category {
+    display: inline-block;
+    background-color: rgb(238, 238, 238);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    color: #242b69;
+}
+
+/* ===== Modal create ===== */
+.project-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 500ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 800px;
+    max-width: 80%;
+}
+.project-modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.modal-title {
+    font-size: 3rem;
+}
+
+.modal-header .close-button {
+    background: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    font-size: 3rem;
+    color: #242b69;
+}
+
+.modal-body {
+    padding: 1rem;
+    font-size: 1.8rem;
+}
+
+.create-project-form .row-form {
+    margin: 1rem 0;
+}
+
+.create-project-form label {
+    font-size: 1.8rem;
+}
+
+.create-project-form input {
+    border: none;
+    border-bottom: 1px solid #242b69;
+    margin-left: 1rem;
+    font-size: 1.8rem;
+}
+.create-project-form input:focus {
+    outline: none;
+}
+
+.create-project-form textarea {
+    display: block;
+    resize: none;
+    font-size: 1.8rem;
+    width: 80%;
+    height: 200px;
+    margin-top: 1rem;
+    border: 1px solid #242b69;
+}
+.create-project-form textarea:focus {
+    outline: none;
+}
+
+.create-project-form button {
+    background-color: #242b69;
+    color: white;
+    padding: 1rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.8rem;
+}
+
+.overlay {
+    opacity: 0;
+    position: fixed;
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* ===== Media Queries ===== */
+
+@media screen and (max-width: 900px) {
+    * {
+        font-size: 9px;
+    }
+
+    main {
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+    .content-left {
+        margin-right: 0;
+    }
+
+    .project-modal {
+        max-width: 90%;
+    }
+
+    .create-project-form textarea {
+        width: 100%;   
+    }
+}

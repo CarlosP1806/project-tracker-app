@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Tracker</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+  <header>
+    <h1>Project Tracker</h1>
+  </header>
+
+  <main>
+    <section class="content-left">
+      <div class="card categories-card">
+        <h2 class="card-title">Categories</h2>
+        <p class="delete-category">Delete Current Category</p>
+        <ul class="categories">
+          <!-- <li class="category"><span class="category-text">School</span></li>
+          <li class="category"><span class="category-text">Work</span></li>
+          <li class="category"><span class="category-text">Home</span></li> -->
+        </ul>
+        <form class="category-form">
+          <i class="bx bx-plus-medical"></i>
+          <input type="text" class="category-input">
+        </form>
+      </div>
+
+      <div class="card status-card">
+        <h2 class="card-title">Project Status</h2>
+        <p class="clear-completed">Clear Completed Projects</p>
+        <ul class="status">
+          <li id="progress">
+            <span class="custom-bullet"></span>
+            <p>In progress</p>
+            <p class="count progress-count">0</p>
+          </li>
+          <li id="completed">
+            <span class="custom-bullet"></span>
+            <p>Completed</p>
+            <p class="count completed-count">0</p>
+          </li>
+          <li id="important">
+            <span class="custom-bullet"></span>
+            <p>Important</p>
+            <p class="count important-count">0</p>
+          </li>
+        </ul>
+
+      </div>
+    </section>
+
+    <section class="content-right">
+      <div class="project-header">
+        <h2 class>Your Projects</h2>
+        <i class="add-project bx bx-plus-medical"></i>
+      </div>
+
+      <div class="project-container">
+
+        <!-- <div class="project-card">
+          <h3 class="project-title">Project 1</h3>
+          <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit tenetur cum, voluptates ea nihil cumque
+            autem. Consequuntur excepturi dolore dicta? Laudantium explicabo eveniet, sequi quod magnam nam? Provident,
+            nam neque?
+          </p>
+          <span class="project-category">
+            <p>Home</p>
+          </span>
+        </div> -->
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal: Create project -->
+  <div class="project-modal" id="modal">
+    <div class="modal-header">
+      <div class="modal-title">Create a New Project</div>
+      <button class="close-button">&times;</button>
+    </div>
+    <div class="modal-body">
+      <form class="create-project-form">
+        <div class="row-form">
+          <label for="project-name-input">Name:</label>
+          <input type="text" id="project-name-input" placeholder="Your project name">
+        </div>
+        <div class="row-form">
+          <label for="important-input">Is it important?</label>
+          <input type="checkbox" id="important-input">
+        </div>
+        <div class="row-form">
+          <label for="project-description-input">Description:</label>
+          <textarea id="project-description-input" placeholder="Add a brief description of your project"></textarea>
+        </div>
+        <button class="form-btn">Create!</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="overlay"></div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
